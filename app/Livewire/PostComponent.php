@@ -43,6 +43,9 @@ class PostComponent extends Component
         ]);
         $this->editModal=false;
     }
+    public function deletePost ($post){
+        Post::where('id',$post['id'])->delete();
+    }
 
     public function render()
     {

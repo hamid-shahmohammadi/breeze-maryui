@@ -36,7 +36,8 @@
         @scope('actions', $post)
         <div class="flex">
             <x-mary-button @click="$wire.editPost({{$post}})" icon="o-pencil-square" spinner class="btn-sm btn-primary" />
-            <x-mary-button icon="o-trash" spinner class="btn-sm btn-error ml-2" />
+            <x-mary-button @click="confirm('Are you sure?') ? $wire.deletePost({{$post}}) : false"
+              icon="o-trash" spinner class="btn-sm btn-error ml-2" />
         </div>
         @endscope
     </x-mary-table>
